@@ -6,8 +6,8 @@ import { Providers } from "@/components/Providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LazorKit Hackathon Demo",
-  description: "A simple wallet dashboard built with LazorKit",
+  title: "Lumina",
+  description: "The seamless gateway to the LazorKit ecosystem.",
 };
 
 export default function RootLayout({

@@ -30,7 +30,7 @@ export default function Dashboard() {
       <div className="max-w-4xl mx-auto space-y-12 pt-10">
         <header className="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b border-zinc-800">
           <h1 className="text-3xl font-extrabold tracking-tight text-white">
-            LazorKit Demo
+            Lumina
           </h1>
           <AddressDisplay />
         </header>
