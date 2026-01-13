@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LazorKit Simple Wallet Demo
 
-## Getting Started
+> **Hackathon Submission**: A demonstration of Passkey-native authentication and gasless transactions on Solana using the LazorKit SDK.
 
-First, run the development server:
+![LazorKit Demo Banner](public/logo.png) _Add a screenshot/banner here if available_
+
+## 🚀 Overview
+
+This project showcases the next generation of Solana UX. By integrating **LazorKit**, we eliminate two of the biggest hurdles for new users:
+
+1.  **Seed Phrases**: Replaced by device-native **Passkeys** (FaceID/TouchID).
+2.  **Gas Fees**: Sponosored by a **Paymaster** (Gasless).
+
+**Features:**
+
+- [x] **Passkey Login**: Secure biometric authentication.
+- [x] **Paymaster Integration**: Users pay 0 SOL for transactions.
+- [x] **Wallet Dashboard**: View balance and smart wallet address.
+- [x] **Send SOL**: Transfer tokens with zero gas fees.
+
+## 🛠️ Stack
+
+- **Framework**: Next.js 14
+- **Styling**: TailwindCSS
+- **Blockchain**: Solana (Devnet)
+- **Identity**: LazorKit (Passkeys)
+
+## 📦 Quick Start
+
+### 1. Installation
+
+Clone the repository and install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/YOUR_USERNAME/lazorkit-hackathon-demo.git
+cd lazorkit-hackathon-demo
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+(Optional) Customize the configuration in `src/lib/config.ts` if you have a custom RPC or Paymaster. Use the default for Devnet testing.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run Development Server
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📚 Tutorials
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+We have prepared detailed step-by-step guides to help you understand the integration:
 
-## Deploy on Vercel
+1.  [**How to Create a Passkey-Based Wallet**](docs/tutorial-1-passkey-wallet.md)
+    _Learn how to install the SDK and implement biometric login._
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.  [**How to Send Gasless Transactions**](docs/tutorial-2-gasless-transactions.md)
+    _Learn how to configure a Paymaster and sponsor user fees._
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧑‍💻 Project Structure
+
+```
+├── docs/                 # Hackathon Tutorials
+├── src/
+│   ├── app/              # Next.js App Router
+│   │   ├── page.tsx      # Landing Page (Auth)
+│   │   └── dashboard/    # Wallet Dashboard
+│   ├── components/       # React Components
+│   │   ├── auth/         # Login related
+│   │   ├── wallet/       # Wallet features (Send, Balance)
+│   │   └── Providers.tsx # LazorKit Provider Wrapper
+│   └── lib/              # Configuration
+└── public/               # Static assets
+```
+
+## 🏆 Hackathon Context
+
+This project was built to demonstrate how easy it is to onboard users to Solana using LazorKit. By removing the need for browser extensions and SOL for gas, we can create consumer-grade crypto applications.
