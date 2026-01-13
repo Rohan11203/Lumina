@@ -55,12 +55,40 @@ export function Providers({ children }) {
 
 ## Step 3: Add Authentication
 
-Use the pre-built `ConnectButton` component to handle passkey registration and login logic automatically.
+The LazorKit SDK provides a `useWallet` hook to manage the authentication state. We'll create a custom button to handle login.
 
-`src/app/page.tsx`:
+Create `src/components/ConnectButton.tsx`:
 
 ```typescript
-import { ConnectButton } from "@lazorkit/wallet";
+"use client";
+
+import { useWallet } from "@lazorkit/wallet";
+
+export function ConnectButton() {
+  const { connect, disconnect, isConnected, isConnecting, wallet } =
+    useWallet();
+
+  if (isConnected && wallet) {
+    return (
+      <button onClick={() => disconnect()}>
+        Disconnect {wallet.smartWallet.slice(0, 4)}...
+        {wallet.smartWallet.slice(-4)}
+      </button>
+    );
+  }
+
+  return (
+    <button onClick={() => connect()} disabled={isConnecting}>
+      {isConnecting ? "Connecting..." : "Connect Wallet"}
+    </button>
+  );
+}
+```
+
+Now, correct usage in `src/app/page.tsx`:
+
+```typescript
+import { ConnectButton } from "@/components/ConnectButton";
 
 export default function LoginPage() {
   return (

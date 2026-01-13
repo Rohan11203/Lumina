@@ -32,7 +32,7 @@ This project showcases the next generation of Solana UX. By integrating **LazorK
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/lazorkit-hackathon-demo.git
+git clone https://github.com/Rohan11203/Lazorkit-hackathon.git
 cd lazorkit-hackathon-demo
 pnpm install
 ```

@@ -5,6 +5,14 @@ import { SystemProgram, PublicKey, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 
+/**
+ * Component for sending SOL with Gasless (Sponsored) Transactions.
+ *
+ * Features:
+ * 1. Uses LazorKit's `signAndSendTransaction` to automatically trigger Paymaster sponsorship.
+ * 2. Handles "Insufficient Funds" errors gracefully.
+ * 3. Shows transaction signature and Explorer link on success.
+ */
 export function SendSOL() {
   const { signAndSendTransaction, smartWalletPubkey } = useWallet();
   const [recipient, setRecipient] = useState("");
